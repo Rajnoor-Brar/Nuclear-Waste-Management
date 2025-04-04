@@ -21,13 +21,13 @@ class SquareToSineWave(Scene):
             return np.array([interpolate(-3, 3, t), 1.5 * np.sin(2 * PI * t), 0])
 
         sine_wave = always_redraw(lambda: circle.copy().apply_function(to_sine))
-        self.play(Transform(circle, sine_wave), run_time=3)
+        self.play(Transform(circle, sine_wave), run_time=7)
         self.wait(2)
 
 if __name__ == "__main__":
     from manim import config
-    config.pixel_height = 720
-    config.pixel_width = 1280
+    config.pixel_height = 1080
+    config.pixel_width = 1920
     config.frame_rate = 30
     config.output_file = "square_to_sine.mp4"
     config.preview = True
