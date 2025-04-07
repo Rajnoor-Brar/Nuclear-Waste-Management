@@ -1,6 +1,6 @@
 # manim -pql manim.py SquareToSineWave
 
-from manim_cli import *
+from manim.manim_cli import *
 import numpy as np
 
 class SquareToSineWave(Scene):

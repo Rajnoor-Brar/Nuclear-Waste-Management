@@ -3,19 +3,6 @@ import numpy as np
 
 class Title(Scene):
     def construct(self):
-        # Background image
-        background = ImageMobject("images/godzilla.jpg")
-        background.scale_to_fit_height(config.frame_height)
-        background.scale_to_fit_width(config.frame_width)
-
-        # Dark overlay to make background very dark
-        overlay = Rectangle(
-            width=config.frame_width, height=config.frame_height,
-            fill_color=BLACK, fill_opacity=0.4
-        )
-
-        self.add(background, overlay)
-
         # Custom colors
         CUSTOM_SVG_COLOR = rgb_to_color([0.0, 0.4, 0.9])     # Cyan-like
         CUSTOM_GLOW_COLOR = rgb_to_color([0.0, 0.4, 0.8])    # Bright cyan-blue
@@ -54,34 +41,55 @@ class Title(Scene):
         # Time tracker to simulate scene time
         time_tracker = ValueTracker(0)
 
-        # Update function using the tracker’s value
+        # Update function for glow
         def update_glow(mob):
             t = time_tracker.get_value()
             opacity = 0.2 + 0.2 * np.sin(2 * PI * t)
             for g in glow_group[:-1]:  # Apply to all glow layers
                 g.set_fill(CUSTOM_GLOW_COLOR, opacity=opacity)
                 g.set_stroke(CUSTOM_GLOW_COLOR, opacity=opacity)
-            overlay.set_opacity(0.5 + 0.2 * np.sin(2 * PI * t))
 
         glow_group.add_updater(update_glow)
 
-        # Add grouped objects
         self.add(glow_group)
 
-        # Animate the time tracker only
+        # Animate the time tracker only for first 5 seconds
         self.play(
-            time_tracker.animate.increment_value(5),
-            run_time=8, rate_func=linear
+            time_tracker.animate.increment_value(3),
+            run_time=3, rate_func=linear
         )
 
         glow_group.remove_updater(update_glow)
+
+        # Keep glowing after 5 seconds
+        glow_group.add_updater(update_glow)
+
+        # Add glowing text after 5 seconds with custom font
+        title_text = Text("Nuclear Waste Management", font_size=56, font="Edu AU VIC WA NT Pre")
+        title_text.set_color(WHITE)
+        title_text.move_to([0, 0, 0])
+        title_text.set_opacity(0)
+
+        def update_text(mob, alpha):
+            t = alpha * 5  # same domain as time_tracker
+            opacity = min(1.0, t * 0.2) * (0.8 + 0.2 * np.sin(4 * PI * t))
+            mob.set_opacity(opacity)
+
+        self.play(
+            UpdateFromAlphaFunc(title_text, update_text),time_tracker.animate.increment_value(3),
+            run_time=5, rate_func=linear
+        )
+
+        self.add(title_text)
+        glow_group.remove_updater(update_glow)
+
 
 if __name__ == "__main__":
     from manim import config
     config.pixel_height = 1080
     config.pixel_width = 1920
     config.frame_rate = 30
-    config.output_file = "01_D4_Title.mp4"
+    config.output_file = "01_D5_Title.mp4"
     config.preview = True
 
     scene = Title()
