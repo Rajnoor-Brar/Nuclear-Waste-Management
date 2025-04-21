@@ -37,12 +37,11 @@ Things like:
 They’ve picked up **a trace amount** of radiation. Think of it like dust — not harmless, but manageable.
 
 🛡️ **Handling & Storage**:
-- Does **not** need heavy shielding.
-- Often packaged in drums.
-- Taken to **engineered landfills** — specially designed for safety.
+How do we handle them?
+- They do **not** need heavy shielding. and are Often packaged in drums. and then Taken to **engineered landfills** — specially designed for safety.
 
 🕒 **How long is it dangerous?**
-- Usually loses its radioactivity in **days to a few decades**.
+- It Usually loses its radioactivity in **days to a few decades**.
 
 ---
 
@@ -62,12 +61,10 @@ It includes:
 These materials can’t just be tossed in a landfill — they need **serious shielding**.
 
 🛡️ **Handling & Storage**:
-- Packed in **thick concrete or metal containers**.
-- Stored **underground** in facilities safe from earthquakes and groundwater.
+- They are Packed in **thick concrete or metal containers**. and then — Stored **underground** in facilities safe from earthquakes and groundwater.
 
 🕒 **How long is it dangerous?**
-- Radioactive for **hundreds to thousands of years**.
-- Doesn’t need cooling like high-level waste, but still a big deal.
+- It stays Radioactive for **hundreds to thousands of years** and Doesn’t need cooling like high-level waste, but still a big deal.
 
 ---
 
@@ -87,11 +84,12 @@ After months or years inside the reactor, the fuel is:
 - Packed with unstable atoms that can take **thousands of years** to decay
 
 🧊 **Handling & Storage (2-Stage Process)**:
-
-**1. Cooling Pools (First Few Years)**  
+High level waste is handled in two stages
+**1. Cooling Pools for (First Few Years)**  
 Used fuel is moved into **deep pools of water** right next to the reactor.  
 Why? Because it’s:
 - Still generating **a lot of heat**
+- and
 - Releasing powerful **radiation**
 
 Water keeps it cool and shields from radiation.
@@ -105,7 +103,7 @@ These casks are:
 
 🕳️ **Eventually** — we want to store it deep underground in special facilities called **geological repositories**.
 
-🕒 **How long is it dangerous?**
+🕒 **How long is it dangerous? you may ask**
 - **10,000+ years** or more.
 - It’s a long-term problem — not for just us, but our great-great-grandchildren.
 
